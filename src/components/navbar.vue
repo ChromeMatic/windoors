@@ -19,7 +19,7 @@
            <div
              class="flex items-center justify-center lg:space-x-1"
            >
-             <img class="size-8" src="/glass.png" alt="glass image">
+             <img class="size-8" src="/window.png" alt="glass image">
              <h1 class="font-bold overline leading-tight lg:text-xl text-sm text-center">
                International Windoors & Glass Solution
              </h1>
