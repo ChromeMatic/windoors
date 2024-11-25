@@ -1,5 +1,5 @@
 <script setup lang="ts">
- import { page_animation } from '../animation/motion'
+ import { page_animation,stagger_effect } from '../animation/motion'
  import { useTheme } from '../../composables/useTheme'
  import { useHead } from 'unhead'
 
@@ -26,28 +26,100 @@
 <template>
   <section
     v-motion="page_animation"
-    class="w-full h-svh flex justify-center items-center px-4 py-2"
-    :class="useTheme() ? ''
-    :''"
+    class="w-full flex flex-col space-y-4 justify-center items-center px-4 py-2 overflow-hidden"
+    :class="useTheme() ? 'bg-Dark'
+    :'bg-Snow'"
   >
-    <div
-        class="flex flex-col items-center justify-center space-y-6 px-8 py-2"
-    >
-      <h2 class="text-6xl text-center font-semibold">
-        International Windoors & glass solution
-      </h2>
+    <div class="flex lg:flex-row flex-col p-2 lg:space-x-2 space-x-0 lg:space-y-0 space-y-2 justify-center items-center">
 
-      <p class="text-lg text-center leading-6 subpixel-antialiased">
-        At International Windoors & Glass Solutions, we specialize in creating stunning, high-quality
-        windows and glass door solutions that enhance both the aesthetics and functionality of your spaces.
-        With a commitment to precision craftsmanship and innovative design, our products are tailored to
-        meet the unique needs of residential, commercial, and industrial clients. Whether you're looking
-        for sleek, modern glass doors, energy-efficient windows, or custom glass designs, we provide
-        durable, elegant, and sustainable solutions that transform your environment. Our expert team is
-        dedicated to delivering exceptional service and the highest standards of quality, ensuring that
-        every installation is a seamless blend of beauty, performance, and long-lasting durability.
-        Let us help you bring your vision to life with our custom glass and window solutions.
-      </p>
+      <video
+        v-motion="stagger_effect(775,75,0)"
+        autoplay muted loop
+        class=" h-[50vh] object-cover w-full rounded-tl-3xl rounded-br-3xl rounded-md border-2"
+        :class="useTheme() ? 'rounded-lg border-teal-950' : ''"
+      >
+        <source src="/VID_42911026_105959_288.mp4">
+      </video>
+
+      <div
+          v-motion="stagger_effect(825,-75,0)"
+          class="flex flex-col items-center justify-center space-y-6 px-8 py-2 lg:h-[75vh]"
+      >
+        <h2
+            v-motion="stagger_effect(1075,0,10)"
+            class="lg:text-6xl text-4xl text-center font-semibold"
+        >
+          International Windoors & glass solution
+        </h2>
+
+        <p
+            v-motion="stagger_effect(1175,0,10)"
+            class="lg:text-lg text-sm text-center leading-6 subpixel-antialiased"
+        >
+          International Windoors & Glass Solutions specializes in high-quality, custom windows
+          and glass doors designed to enhance aesthetics and functionality. Serving residential,
+          commercial, and industrial clients, they offer durable, energy-efficient, and innovative
+          designs crafted with precision and sustainability in mind. Their expert team ensures exceptional
+          service and seamless installations, combining beauty, performance, and lasting durability to
+          bring your vision to life.
+        </p>
+      </div>
+
     </div>
+
+    <div class="w-full flex flex-col justify-center items-center space-y-6">
+
+      <div
+          :class="useTheme() ? 'bg-innerDark border-teal-950':'bg-OffWhite'"
+          class="flex flex-col items-center justify-center space-y-4 lg:px-8 px-2 lg:py-4 py-2 rounded-md border shadow-lg"
+      >
+            <h1 class="text-3xl font-semibold leading-tight overline">
+              What we do
+            </h1>
+            <p class="text-center leading-8">
+              At International Windoors & Glass Solutions, we specialize in creating stunning, high-quality
+              windows and glass door solutions that enhance both the aesthetics and functionality of your spaces.
+              With a commitment to precision craftsmanship and innovative design, our products are tailored to
+              meet the unique needs of residential, commercial, and industrial clients. Whether you're looking
+              for sleek, modern glass doors, energy-efficient windows, or custom glass designs, we provide
+              durable, elegant, and sustainable solutions that transform your environment. Our expert team is
+              dedicated to delivering exceptional service and the highest standards of quality, ensuring that
+              every installation is a seamless blend of beauty, performance, and long-lasting durability.
+              Let us help you bring your vision to life with our custom glass and window solutions.
+            </p>
+      </div>
+
+      <div
+          class="w-full grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-2"
+
+      >
+           <div
+               class="w-full flex flex-col items-center justify-center space-y-4 px-8 py-4 rounded-md border-2"
+               :class="useTheme() ? 'bg-innerDark border-teal-950' : ''"
+           >
+             <img class="rounded-md" src="/IMG_20220520_113039_687.jpg" alt="product1">
+           </div>
+          <div
+              class="w-full flex flex-col items-center justify-center space-y-4 px-8 py-4 rounded-md border-2"
+              :class="useTheme() ? 'bg-innerDark border-teal-950' : ''"
+          >
+            <img class="rounded-md" src="/IMG_20220812_081852_823.jpg" alt="product1">
+          </div>
+        <div
+            class="w-full flex flex-col items-center justify-center space-y-4 px-8 py-4 rounded-md border-2"
+            :class="useTheme() ? 'bg-innerDark border-teal-950' : ''"
+        >
+          <img class="rounded-md" src="/IMG_20220516_115950_053.jpg" alt="product1">
+        </div>
+        <div
+            class="w-full flex flex-col items-center justify-center space-y-4 px-8 py-4 rounded-md border-2"
+            :class="useTheme() ? 'bg-innerDark border-teal-950' : ''"
+        >
+          <img class="rounded-md" src="/IMG_20220928_084853_187.jpg" alt="product1">
+        </div>
+      </div>
+
+    </div>
+
   </section>
 </template>

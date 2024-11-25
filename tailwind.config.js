@@ -8,7 +8,13 @@ export default {
     extend: {
       fontFamily: {
         'Nunito': " 'Nunito', serif;",
-      }
+      },
+      colors:{
+        Dark: '#202124',
+        innerDark: '#191919',
+        Snow:'#F5FEFD',
+        OffWhite:'#FAF9F6',
+      },
     },
   },
   plugins: [],

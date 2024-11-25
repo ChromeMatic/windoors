@@ -8,3 +8,8 @@ export const useTheme =():boolean =>{
 
     return state.value
 }
+
+export const changeTheme= ()=>{
+    const theme = useThemeStore()
+    theme.changeTheme()
+}
