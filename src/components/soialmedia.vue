@@ -26,7 +26,15 @@
         :class="useTheme() ? 'bg-Dark':'bg-green-50'"
     >
       <h2 class="text-center">
-        © 2024 8 Rivas Roofing & Hardware. Built by <a class="transition-all ease-in-out duration-500 hover:text-indigo-500 underline" href="https://dev-main.tech/"  target="_blank" rel="noopener noreferrer">Armani Brown</a>
+        © 2024 International Windows & doors. Built by
+        <a
+            class="transition-all ease-in-out duration-500 hover:text-indigo-500 underline"
+            href="https://dev-main.tech/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+          Armani Brown
+        </a>
       </h2>
     </div>
   </section>
