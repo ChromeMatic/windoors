@@ -7,20 +7,19 @@
   <section
       v-motion="navigationBar_animation"
       class="lg:p-2 p-1.5 flex flex-col w-full space-y-2 items-center justify-center backdrop-blur-md overflow-hidden"
-      :class="useTheme() ? 'bg-Dark'
+      :class="useTheme() ? 'bg-innerDark/30'
       :'bg-indigo-500/15'"
   >
         <div
-         class="flex items-center justify-between w-full lg:p-4 p-3
+         class="flex items-center justify-between w-full lg:py-2 lg:px-8 px-1 py-1.5
          rounded-lg shadow-md backdrop-blur-lg"
-         :class="useTheme() ? 'bg-innerDark'
-         : 'bg-white'"
+         :class="useTheme() ? 'bg-Dark/65'
+         : 'bg-white/80'"
         >
            <div
              class="flex items-center justify-center lg:space-x-1"
            >
-             <img class="size-8" src="/window.png" alt="glass image">
-             <h1 class="font-bold overline leading-tight lg:text-xl text-sm text-center">
+             <h1 class="font-bold leading-tight lg:text-xl text-sm text-center">
                International Windoors & Glass Solution
              </h1>
            </div>

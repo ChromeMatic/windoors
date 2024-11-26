@@ -2,6 +2,7 @@
  import { page_animation,stagger_effect } from '../animation/motion'
  import { useTheme } from '../../composables/useTheme'
  import { useHead } from 'unhead'
+ import {MotionGroupComponent} from "@vueuse/motion";
 
  useHead({
    title: 'International Windoors & glass solution',
@@ -21,6 +22,19 @@
      }
    ]
  })
+
+ type Images = {  src: string, name:string }
+ let images: Images[] = [
+   { src:'/IMG_20221030_154812_710.jpg', name:'IMG_20221030_154812_710.jpg' },
+   { src:'/IMG_20220928_084853_187.jpg', name:'IMG_20220928_084853_187.jpg' },
+   { src:'/IMG_20221215_091631_340.jpg', name:'IMG_20221215_091631_340.jpg' },
+   { src:'/IMG_20230202_174942_074.jpg', name:"IMG_20230202_174942_074.jpg" },
+   { src:'/IMG_20230202_175059_176.jpg', name:"IMG_20230202_175059_176.jpg" },
+   { src:'/IMG_20220516_115950_053.jpg', name:"IMG_20220516_115950_053.jpg" },
+   { src:'/IMG_20230327_111421_626.jpg', name:"IMG_20230327_111421_626.jpg" },
+   { src:'/IMG_20220520_113039_687.jpg', name:"IMG_20220520_113039_687.jpg" },
+   { src:'/IMG_20220812_081852_823.jpg', name:"IMG_20220812_081852_823.jpg" },
+ ]
 </script>
 
 <template>
@@ -70,8 +84,8 @@
     <div class="w-full flex flex-col justify-center items-center space-y-6">
 
       <div
+          class="flex flex-col items-center justify-center space-y-4 lg:px-8 px-2 lg:py-4 py-2 rounded-md border-2 shadow-lg"
           :class="useTheme() ? 'bg-innerDark border-teal-950':'bg-OffWhite'"
-          class="flex flex-col items-center justify-center space-y-4 lg:px-8 px-2 lg:py-4 py-2 rounded-md border shadow-lg"
       >
             <h1 class="text-3xl font-semibold leading-tight overline">
               What we do
@@ -89,37 +103,27 @@
             </p>
       </div>
 
-      <div
-          class="w-full grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-2"
+      <div class="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
 
-      >
-           <div
-               class="w-full flex flex-col items-center justify-center space-y-4 px-8 py-4 rounded-md border-2"
-               :class="useTheme() ? 'bg-innerDark border-teal-950' : ''"
-           >
-             <img class="rounded-md" src="/IMG_20220520_113039_687.jpg" alt="product1">
-           </div>
+        <MotionGroupComponent
+            preset="slideVisibleLeft" :duration="875"
+        >
           <div
-              class="w-full flex flex-col items-center justify-center space-y-4 px-8 py-4 rounded-md border-2"
-              :class="useTheme() ? 'bg-innerDark border-teal-950' : ''"
+              v-for="img in images"
+              :key="img.src"
+              class="rounded-2xl border-2 flex flex-col space-y-2 h-72 overflow-hidden"
+              :class="useTheme() ? 'bg-innerDark border-teal-950' : 'bg-OnWhite shadow-lg'"
           >
-            <img class="rounded-md" src="/IMG_20220812_081852_823.jpg" alt="product1">
+            <img class="overflow-hidden object-cover" :src="img.src" :alt="img.name" />
           </div>
-        <div
-            class="w-full flex flex-col items-center justify-center space-y-4 px-8 py-4 rounded-md border-2"
-            :class="useTheme() ? 'bg-innerDark border-teal-950' : ''"
-        >
-          <img class="rounded-md" src="/IMG_20220516_115950_053.jpg" alt="product1">
-        </div>
-        <div
-            class="w-full flex flex-col items-center justify-center space-y-4 px-8 py-4 rounded-md border-2"
-            :class="useTheme() ? 'bg-innerDark border-teal-950' : ''"
-        >
-          <img class="rounded-md" src="/IMG_20220928_084853_187.jpg" alt="product1">
-        </div>
+        </MotionGroupComponent>
+
+
+
       </div>
 
     </div>
+
 
   </section>
 </template>
