@@ -78,10 +78,44 @@
           bring your vision to life.
         </p>
       </div>
+    </div>
+
+    <div
+      class="flex lg:flex-row flex-col w-full lg:space-x-4 space-x-0 lg:space-y-0 space-y-4 lg:h-[30rem]"
+    >
+      <div
+          class="lg:w-[38rem] h-full p-2 flex justify-center items-center"
+      >
+        <h4 class="text-center lg:text-2xl font-semibold leading-tight">
+          Let us bring your vision to life with high-quality window and glass door solutions that blend style, functionality, and durability.
+        </h4>
+      </div>
+
+      <div
+          class="w-full p-2 grid lg:grid-cols-3 gap-2 rounded-2xl border-2 shadow-2xl backdrop-blur-lg"
+          :class="useTheme() ? 'shadow-lg bg-innerDark shadow-teal-950 border-teal-950'
+          : 'bg-Snow shadow-teal-400 border-t-0 border-l-0 shadow-2xl'"
+      >
+        <img
+            src="/IMG_20230327_111655_271.jpg"
+            class="rounded-2xl lg:h-full h-64 lg:w-80 w-full object-cover col-span-2 lg:col-span-1"
+            alt="IMG_20230327_111655_271.jpg"
+        >
+        <img
+            src="/IMG_20230506_184536_794.jpg"
+            class="rounded-2xl lg:h-full h-64 lg:w-80 w-full object-cover col-span-1"
+            alt="IMG_20230506_184536_794.jpg"
+        >
+        <img
+            src="/IMG_20230327_111655_271.jpg"
+            class="rounded-2xl lg:h-full h-64 lg:w-80 w-full object-cover col-span-1"
+            alt="IMG_20230327_111655_271.jpg"
+        >
+      </div>
 
     </div>
 
-    <div class="w-full flex flex-col justify-center items-center space-y-6">
+    <div class="w-full flex flex-col justify-center items-center space-y-6 py-8">
 
       <div
           class="flex flex-col items-center justify-center space-y-4 lg:px-8 px-2 lg:py-4 py-2 rounded-md border-2 shadow-lg"
@@ -117,7 +151,6 @@
             <img class="overflow-hidden object-cover" :src="img.src" :alt="img.name" />
           </div>
         </MotionGroupComponent>
-
 
 
       </div>
